@@ -14,7 +14,9 @@ import { EDITOR_JS_TOOLS } from "./editorjs-constants";
 
 import { API } from '../../config';
 import {Button, Card, Layout, SkeletonBodyText, SkeletonDisplayText,
-    SkeletonPage, TextContainer, EmptyState, OptionList, TextField, MediaCard, Thumbnail } from '@shopify/polaris';
+    SkeletonPage, TextContainer, EmptyState, OptionList, TextField, 
+    MediaCard, Thumbnail,
+    Frame, Image, Page, Toast } from '@shopify/polaris';
 import { ResourcePicker, TitleBar } from '@shopify/app-bridge-react';
 import ResourceListWithProducts from '../ResourceList';
 import store from 'store-js';
@@ -193,7 +195,7 @@ const BlogUpdate = ({ shop, router }) => {
     const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
 
     return (
-       <SkeletonPage title={title} type="input" primaryAction secondaryActions={2}>
+       <SkeletonPage title={title} type="input">
            {showSuccess()}
            {showError()}
            <ResourcePicker
@@ -237,9 +239,6 @@ const BlogUpdate = ({ shop, router }) => {
                     <Card title="Tags">
                       <Card.Section>
                         {showPolarisTags()}
-                      </Card.Section>
-                      <Card.Section>
-                        <SkeletonBodyText lines={1} />
                       </Card.Section>
                     </Card>
                   </Card>
