@@ -48,10 +48,6 @@ const blogSchema = new mongoose.Schema(
         selectedProducts: {
             type: [Array]
         },
-        categories: [{ 
-            type: ObjectId, 
-            ref: 'Category'
-        }],
         tags: [{ 
             type: ObjectId, 
             ref: 'Tag'
@@ -63,6 +59,9 @@ const blogSchema = new mongoose.Schema(
         shopPostedAt: { 
             type: ObjectId, 
             ref: 'Shop'
+        },
+        shopify_domain: { 
+            type: String
         }
     },
     { timestamps: true }

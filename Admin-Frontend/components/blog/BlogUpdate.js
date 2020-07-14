@@ -15,8 +15,7 @@ import { EDITOR_JS_TOOLS } from "./editorjs-constants";
 import { API } from '../../config';
 import {Button, Card, Layout, SkeletonBodyText, SkeletonDisplayText,
     SkeletonPage, TextContainer, EmptyState, OptionList, TextField, 
-    MediaCard, Thumbnail,
-    Frame, Image, Page, Toast } from '@shopify/polaris';
+    MediaCard, Thumbnail } from '@shopify/polaris';
 import { ResourcePicker, TitleBar } from '@shopify/app-bridge-react';
 import ResourceListWithProducts from '../ResourceList';
 import store from 'store-js';
@@ -175,8 +174,9 @@ const BlogUpdate = ({ shop, router }) => {
 
     const showSuccess = () => (
         <div className="alert alert-success" style={{ display: success ? '' : 'none' }}>
-            {success}
-        </div>
+            <p>Your new post titled "{title}" was created successfully ☺️ 
+            </p>
+          </div>
     );
 
     const handleSelection = (resources) => {
