@@ -4,3 +4,5 @@ node_modules/
 yarn.lock
 .idea/
 package-lock.json
+out.log
+err.log
