@@ -4,3 +4,5 @@ node_modules
 npm-debug.log
 .prettierrc
 package-lock.json
+out.log
+err.log
