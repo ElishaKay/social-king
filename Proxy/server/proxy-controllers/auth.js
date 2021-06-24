@@ -167,14 +167,13 @@ exports.authMiddleware = (req, res, next) => {
                 }
                 console.log('user created successfully');
                 req.profile = user;
-                
+                req.user = user;
             });
         } else {
             console.log('user found', user);
-
             req.user = user;
+            req.profile = user;
         }
-        req.profile = user;
         next();
     });
 };
