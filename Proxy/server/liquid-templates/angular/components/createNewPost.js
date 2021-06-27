@@ -44,7 +44,6 @@ module.exports.createNewPost = ({shop, user, tags}) => {
             </p>`
   }
 
-
   return `
           ${shop.shopify_domain.includes('beforestores') ? 
                         sendGUIDownards() : ''}  
