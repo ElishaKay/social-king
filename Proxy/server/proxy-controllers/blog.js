@@ -141,9 +141,23 @@ exports.create = (req, res) => {
                     })
                     if(shop && shop._doc && !shop._doc.postModeration){
                         let message = translations['PostLive'][shop ? shop.language : 'English']
-                        res.send({message: `<a href='https://${blog.shopifyDomain}${process.env.PROXY_ROUTE}/blog/${blog.slug}'>${message}</a>`});
+                        if(blog.shopifyDomain.includes('skordo')){
+                           message =  `<p>
+                              Thank you for submitting your post! 
+                              Explore others’ posts and various cooking topics on our <a href='/community/connect'>community page</a>
+                            </p>`
+                        } else {
+                            message = `<a href='https://${blog.shopifyDomain}${process.env.PROXY_ROUTE}/blog/${blog.slug}'>${message}</a>`
+                        }
+                        res.send({message});
                     } else {
                         let message = translations['PostPendingReview'][shop ? shop.language : 'English']
+                        if(blog.shopifyDomain.includes('skordo')){
+                           message =  `<p>
+                              Thank you for submitting your post! 
+                              Explore others’ posts and various cooking topics on our <a href='/community/connect'>community page</a>
+                            </p>`
+                        }
                         res.send({message});
                     }
                 }
