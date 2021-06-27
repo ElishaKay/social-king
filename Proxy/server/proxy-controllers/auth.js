@@ -157,8 +157,12 @@ exports.authMiddleware = (req, res, next) => {
             let password = req.query.hash;
             let shopDomain = req.query.shop;
             let profile = `https://${req.query.shop}/community/connect/user/${username}`;
+            let cover_photo = 'https://socialking.app/proxy/images/uploads/social-king-app.myshopify.com-1603702989629.jpeg'
+            if(shopDomain.includes('skordo')){
+                cover_photo = 'https://socialking.app/proxy/images/uploads/Elisha-Kramer-1624796314613.png'
+            }
 
-            const user = new User({ name, email, password, profile, username, shopDomain });
+            const user = new User({ name, email, password, profile, username, shopDomain, cover_photo });
             user.save((err, user) => {
                 if (err) {
                     return res.status(401).json({

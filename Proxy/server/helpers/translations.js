@@ -60,7 +60,7 @@ exports.translations = {
       "Japanese": "約"
    },
    "ChooseAChannel": {
-      "English": "Choose a Channel",
+      "English": "Choose a Topic",
       "Spanish": "Elige un Canal",
       "French": "Choisissez une Chaîne",
       "Portuguese": "Escolha um Canal",
