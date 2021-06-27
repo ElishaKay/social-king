@@ -32,6 +32,18 @@ module.exports.createNewPost = ({shop, user, tags}) => {
             </style>`
   }
 
+  const defaultPrompt = () =>{
+    return `<h3> ${translations['WhatsUp'][shop ? shop.language : 'English']}${formatQuotes(user.name) ? 
+        ', '+formatQuotes(user.name).split(' ')[0] : '' }?</>                      
+          `
+  }
+
+  const skordoPrompt = () =>{
+    return `<p>
+              Hi {{ customer.first_name }}! Share a recipe, a photo of the dish you made, ask a cooking question, or tell a cooking story.
+            </p>`
+  }
+
 
   return `
           ${shop.shopify_domain.includes('beforestores') ? 
@@ -39,7 +51,7 @@ module.exports.createNewPost = ({shop, user, tags}) => {
           <div class='community-card community-create-post-editor'>
                <div id='new-post' class='community-admin-padding' ng-controller='newPostController'>
                     <div id='error-message' class='text-center'>
-                      <h3>${shop.shopify_domain.includes('polka-dots') ? 'Create your post below' : translations['WhatsUp'][shop ? shop.language : 'English']}, ${formatQuotes(user.name) ? formatQuotes(user.name).split(' ')[0] : '' }${shop.shopify_domain.includes('polka-dots') ? '' : '?'}</h3>
+                      ${ shop.shopify_domain.includes('skordo') ? skordoPrompt() : defaultPrompt() }
                     </div>
                     ${shop.shopify_domain.includes('globalxploration-inc') || shop.shopify_domain.includes('jungle-navigator') ||
                          shop.shopify_domain.includes('polka-dots') ? 
