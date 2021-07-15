@@ -51,7 +51,8 @@ exports.newsFeed = ({shop, blogs}) => {
                         </a>
                        <div class='text'><p class='community-post-slug-${blog.slug} community-instant-post community-reactions'></p></div>
                        <a href="${proxyRoute}/blog/${blog.slug}">
-                          <p>${blog.commentCount} comment${blog.commentCount!=1 ? 's' : ''}</p>
+                          <p>${blog.commentCount==null ? 'There may or may not be comments here': blog.commentCount} 
+                          ${ blog.commentCount!=null ? (blog.commentCount!=1 ? 'comments' : 'comment'): ''}</p>
                        </a>
                        <a href='https://${shop.shopify_domain+proxyRoute}/user/profile?slug=${blog.slug}&email={{ customer.email }}&name={{ customer.name }}&hash={{ customer.email | append: "somecrazyhash" | md5 }}#/add-comment'>
                             <input type="text" class="community-instant-post" placeholder="${translations['AddComment'][shop ? shop.language : 'English']}" />

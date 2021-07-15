@@ -47,8 +47,11 @@ exports.create = (req, res) => {
     let searchForText = element => element.type == 'paragraph';
     let postTeaser = body.blocks.find(searchForText);
 
-    postTeaser = postTeaser ?  postTeaser.data.text 
-        : `Check out this post made by a member of our community`
+    if(postTeaser && postTeaser.data.text != 'Click here to get started...'){
+        postTeaser = postTeaser.data.text          
+    } else {
+        postTeaser = `Check out this post by a member of our community`
+    }
 
     blog.excerpt = smartTrim(postTeaser, 320, ' ', ' ...');
     blog.mdesc = stripHtml(postTeaser.substring(0, 160));
