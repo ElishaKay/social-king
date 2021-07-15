@@ -50,6 +50,9 @@ exports.newsFeed = ({shop, blogs}) => {
                             <p>${blog.excerpt}</p>
                         </a>
                        <div class='text'><p class='community-post-slug-${blog.slug} community-instant-post community-reactions'></p></div>
+                       <a href="${proxyRoute}/blog/${blog.slug}">
+                          <p>${blog.commentCount} comments</p>
+                       </a>
                        <a href='https://${shop.shopify_domain+proxyRoute}/user/profile?slug=${blog.slug}&email={{ customer.email }}&name={{ customer.name }}&hash={{ customer.email | append: "somecrazyhash" | md5 }}#/add-comment'>
                             <input type="text" class="community-instant-post" placeholder="${translations['AddComment'][shop ? shop.language : 'English']}" />
                         </a>

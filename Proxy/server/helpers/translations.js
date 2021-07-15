@@ -15,7 +15,7 @@ exports.translations = {
       "Japanese": "投稿を作成する"
    },
    "AddComment": {
-      "English": "Add Comment",
+      "English": "Click here to comment",
       "Spanish": "Agregar Comentario",
       "French": "Ajouter un Commentaire",
       "Portuguese": "Adicionar Comentário",
