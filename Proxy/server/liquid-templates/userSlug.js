@@ -15,8 +15,8 @@ exports.userSlug = ({user, blogs, shop}) => {
         <div class="community-background">
             <main class="page-width">
                 <div class="pure-g">
-                    ${navbar({shop, user})}
                     ${newsFeed({user, shop, blogs})}
+                    ${navbar({shop, user})}
                 </div>
             </main>
         </div>

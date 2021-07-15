@@ -15,8 +15,8 @@ exports.tagSlug = ({ shop, blogs, tags, size, tag }) => {
         <div class="community-background">
             <main class="page-width">
                 <div class="pure-g">
-                    ${navbar({shop, tags})}
                     ${newsFeed({shop, blogs})}
+                    ${navbar({shop, tags})}
                 </div>
             </main>
         </div>
